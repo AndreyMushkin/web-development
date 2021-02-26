@@ -1,2 +1,2 @@
 <?php
-echo '<b><font color=green>Hello WO</b>OOO</font>OORLD!';
+echo '<b>Hello World!</b>';
