@@ -1,4 +1,5 @@
 <?php
+
 $string = $_GET['text'];
 $index = 0;
 $resultString = '';
@@ -10,7 +11,7 @@ while ($string[$index] === ' ')
     $index += 1;
 }
 
-while ($string[$index] !== ' ')
+while (($string[$index] !== ' ') and ($index <= strlen($string)))
 {
     $resultString .= $string[$index];
     $index += 1;
@@ -23,4 +24,5 @@ while ($string[$index] !== ' ')
 	}
     }
 }
+
 echo $resultString;		
