@@ -16,7 +16,7 @@ if (!file_exists('data'))
 	mkdir('data');
 }
 
-$file = fopen('data/' . $email . '.txt', 'w');
+$file = fopen("data/{$email}.txt", 'w');
 
 fwrite($file, 'first_name=' . getQueryStringParameter('first_name') . '
 last_name=' . getQueryStringParameter('last_name') . '
