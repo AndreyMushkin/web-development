@@ -11,27 +11,34 @@ function getQueryStringParameter (string $name): ?string
 
 $email = getQueryStringParameter('email');
 
-$file = fopen('data/' . $email . '.txt', 'r');
-
-while (!feof($file))
+if (file_exists("data/{$email}.txt"))
 {
-	$parameterString = fgets($file);
-	switch (strtok($parameterString, '=')) 
+   	$file = fopen("data/{$email}.txt", 'r');
+	while (!feof($file))
 	{
-		case 'first_name':
-			echo 'First Name: ' . strtok('=');
-			break;
+		$parameterString = fgets($file);
+		switch (strtok($parameterString, '=')) 
+		{
+			case 'first_name':
+				echo 'First Name: ' . strtok('=');
+				break;
 
-		case 'last_name':
-			echo 'Last Name: ' . strtok('=');
-			break;
+			case 'last_name':
+				echo 'Last Name: ' . strtok('=');
+				break;
 
-		case 'age':
-			echo 'Age: ' . strtok('=');
-			break;
+			case 'age':
+				echo 'Age: ' . strtok('=');
+				break;
 
-		case 'email':
-			echo 'Email: ' . strtok('=');
-			break;
+			case 'email':
+				echo 'Email: ' . strtok('=');
+				break;
+		}
 	}
+	fclose($file);
+}
+else
+{
+	echo "Email {$email} is not registered.";
 }

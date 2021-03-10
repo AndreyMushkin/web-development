@@ -11,7 +11,10 @@ function getQueryStringParameter (string $name): ?string
 
 $email = getQueryStringParameter('email');
 
-mkdir('data');
+if (!file_exists('data'))
+{
+	mkdir('data');
+}
 
 $file = fopen('data/' . $email . '.txt', 'w');
 
