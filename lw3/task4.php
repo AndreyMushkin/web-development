@@ -4,7 +4,7 @@
 
 header('Content-Type: text/plain');
 
-function getQueryStringParameter (string $name): ?string
+function getQueryStringParameter(string $name): ?string
 {
 	return isset($_GET[$name]) ? $_GET[$name] : ' ';
 }
