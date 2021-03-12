@@ -6,14 +6,14 @@ header('Content-Type: text/plain');
 
 function getQueryStringParameter(string $name): ?string
 {
-	return isset($_GET[$name]) ? $_GET[$name] : ' ';
+    return isset($_GET[$name]) ? $_GET[$name] : ' ';
 }
 
 $email = getQueryStringParameter('email');
 
 if (!file_exists('data'))
 {
-	mkdir('data');
+    mkdir('data');
 }
 
 $file = fopen("data/{$email}.txt", 'w');
