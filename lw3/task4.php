@@ -4,9 +4,9 @@
 
 header('Content-Type: text/plain');
 
-function getQueryStringParameter(string $name): ?string
+function getQueryStringParameter(string $name): string
 {
-    return isset($_GET[$name]) ? $_GET[$name] : ' ';
+    return isset($_GET[$name]) ? $_GET[$name] : '';
 }
 
 $email = getQueryStringParameter('email');
@@ -16,12 +16,19 @@ if (!file_exists('data'))
     mkdir('data');
 }
 
-$file = fopen("data/{$email}.txt", 'w');
+if ($email)
+{
+    $file = fopen("data/{$email}.txt", 'w');
+    
+    fwrite($file, 'first_name=' . getQueryStringParameter('first_name') . PHP_EOL . 
+    'last_name=' . getQueryStringParameter('last_name') . PHP_EOL . 
+    'email=' . getQueryStringParameter('email') . PHP_EOL . 
+    'age=' . getQueryStringParameter('age') . PHP_EOL
+    );
 
-fwrite($file, 'first_name=' . getQueryStringParameter('first_name') . '
-last_name=' . getQueryStringParameter('last_name') . '
-email=' . getQueryStringParameter('email') . '
-age=' . getQueryStringParameter('age') . '
-');
-
-fclose($file);
+    fclose($file);
+}
+else
+{
+    echo 'Required email value';
+}
