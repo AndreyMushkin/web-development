@@ -5,7 +5,7 @@ body
     background-image: url('../images/background-shade.png');
     background-position: 0 50px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 400px;
 }
 
 .top-menu
@@ -23,7 +23,7 @@ body
     align-items: center;
     padding: 0 20px;
     background: #fff;
-    font-family: 'Georgia', sans-serif;
+    font: 19px 'Georgia', sans-serif;
 }
 
 .top-menu__item-icon
@@ -39,20 +39,18 @@ body
 .content
 {
     width: 1000px;
-    margin: 260px auto;
+    margin: 160px auto 0;
     padding: 0 20px;
 }
 .profile-photo
 {
     float: left;
+    margin-top: 50px;
 }
 
 .quote-container
 {
     width: 650px;
-    height: 350px;
-    box-sizing: border-box;
-    padding: 50px 20px 0 60px;
     float: left;
     position: relative;
 }
@@ -60,6 +58,7 @@ body
 .quote-container__quote-icon
 {
     position: absolute;
+    top: 5px;
 }
 
 .quote-container__quote-text
@@ -73,16 +72,15 @@ body
 .quote-container__quote-author
 {
     margin-left: 60px;
-    font: 600 16px 'Open Sans', sans-serif;
+    font: 550 16px 'Open Sans', sans-serif;
     color: #fff;
 }
 
 .favorite-list
 {
-    background-color: #fff;
     clear: both;
     width: 330px;
-    margin: 45px 0;
+    padding-top: 50px;
     display: inline-block;
     float: left;
 }
@@ -90,9 +88,7 @@ body
 .favorite-list__list-title
 {
     color: #15a98c;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 620;
+    font: 550 24px 'Open Sans', sans-serif;
 }
 
 .favorite-list__list
@@ -100,19 +96,17 @@ body
     margin: 15px 0 40px 23px;
     padding: 0;
     color: #555;
-    font-family: 'Georgia', serif;
-    font-size: 19px;
-    line-height: 37px;
+    font: 19px/36px 'Georgia', serif;
 }
 
 .content-text
 {
-    background-color: #fff;
     float: left;
     width: 600px;
     padding: 40px 20px 0 60px;
     box-sizing: border-box;
-    margin-bottom: 110px;
+    position: relative;
+    bottom: 160px;
 }
 
 .content-text__title
@@ -124,14 +118,12 @@ body
 
 .content-text__title_h1
 {
-    font-size: 48px;
-    font-style: bold;
+    font: bold 48px 'Open Sans', sans-serif;
 }
 
 .content-text__title_h2
 {
-    font-size: 36px;
-    font-weight: 470;
+    font: 36px 'Open Sans', sans-serif;
 }
 
 .content-text__line
@@ -145,9 +137,7 @@ body
 .content-text__text
 {
     color: #555;
-    font-family: 'Georgia', serif;
-    font-size: 19px;
-    line-height: 33px;
+    font: 19px/32px 'Georgia', serif;
     margin: 20px 0 40px;
 }
 
@@ -164,63 +154,172 @@ body
     content: ' →';
 }
 
-.favorite-films-title
-{
-    clear: both;
-    width: 1200px;
-    margin: 0 auto 30px;
-    color: #333;
-    font: 36pt 'Open Sans', sans-serif;
-}
 .favorite-films
 {
+    clear: both;
     display: flex;
-    width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background: #f9f9f9;
+    position: relative;
+    top: -65px;
 }
 
+.favorite-films-title
+{
+    width: 1215px;
+    margin: 35px auto 30px;
+    color: #333;
+    font: 36px 'Open Sans', sans-serif;
+}
+
+.favorite-films__container
+{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
 .favorite-films__item
 {
     width: 285px;
+    margin-right: 20px;
 }
 
 .favorite-films__name
 {
     color: #333;
-    font: bold 18pt 'Open Sans', sans-serif;
-    margin: 30px 0 25px;
+    font: bold 22px 'Open Sans', sans-serif;
+    margin: 25px 0 15px;
 }
 
 .favorite-films__description
 {
     color: #333;
-    font: 200 16pt 'Georgia', serif;
+    font: 200 16px 'Georgia', serif;
     line-height: 35px;
 }
 
-.more-button
+.button
 {
-    display: block;
-    margin: 60px auto 70px;
     width: 220px;
     height: 50px;
     border: 0;
     border-radius: 5px;
     background: #15a98c;
     color: #fff;
-    font: 400 16pt 'Georgia', serif; 
+    font: 400 19px 'Georgia', serif; 
 }
 
+.more-button
+{
+    display: block;
+    margin: 60px auto 70px;
+}
+
+.contact-me-form
+{
+    width: 700px;
+    margin: 0 auto;
+}
+
+.contact-me-form__title
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 200 36px 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.contact-me-form__title:before, .contact-me-form__title:after
+{
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background: #c4c4c4;
+    flex: 1;
+}
+
+.contact-me-form__title:before
+{
+    margin-right: 25px;
+}
+
+.contact-me-form__title:after
+{
+    margin-left: 25px;
+}
+
+.contact-me-form__items-container
+{
+    padding: 0 85px;
+}
+
+.contact-me-form__item
+{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 5px 0;
+    padding-left: 20px; 
+    height: 50px;
+    border: 2px solid #a6a6a6;
+    border-radius: 4px;
+    font: 400 18px 'Open Sans', sans-serif;
+    color: #555;
+}
+
+.contact-me-form__item:focus
+{
+    outline: none;
+    border-color: #15a98c;
+    color: #000;
+}
+
+.contact-me-form__item-title
+{
+    color: #333;
+    margin-top: 25px; 
+    font: 400 16pt 'Open Sans', sans-serif;
+}
+
+.contact-me-form__item-title_required:after
+{
+    content: ' *';
+    color: #ee0707;
+}
+.contact-me-form__item_selector
+{
+    background-image: url('../images/arrow_down.png');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%, 0 0;
+    appearance: none;
+    font: 18px 'Open Sans', sans-serif;
+}
+
+.contact-me-form__radio-item-container
+{
+    display: inline-block;
+    margin: 10px 50px 0 0;
+}
+
+.contact-me-form__radio-item
+{
+    margin: 0 5px 0 0;
+}
+
+.submit-button
+{
+    margin: 50px 0;
+}
 .copyright-footer
 {
-    width: all;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f5f5f5;
     color: #333;
-    font: 400 16pt 'Georgia', serif; 
+    font: 400 16px 'Georgia', serif; 
 }
