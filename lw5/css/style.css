@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background-image: url('../images/background-shade.svg');
+    background-image: url('../images/background-shade.png');
     background-position: 0 50px;
     background-repeat: no-repeat;
     background-size: 100% 400px;
@@ -291,7 +291,7 @@ body
 }
 .contact-me-form__item_selector
 {
-    background-image: url('../images/arrow_down.svg');
+    background-image: url('../images/arrow_down.png');
     background-repeat: no-repeat;
     background-position: right 15px top 50%, 0 0;
     appearance: none;
