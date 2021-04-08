@@ -1,8 +1,7 @@
 body
 {
     margin: 0;
-    padding: 0;
-    background-image: url('../images/background-shade.png');
+    background-image: url('../img/background-shade.png');
     background-position: 0 50px;
     background-repeat: no-repeat;
     background-size: 100% 400px;
@@ -21,7 +20,7 @@ body
     margin: 0;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 21px;
     background: #fff;
     font: 19px 'Georgia', sans-serif;
 }
@@ -63,7 +62,7 @@ body
 
 .quote-container__quote-text
 {
-    margin: 70px 60px 10px;
+    margin: 74px 62px 0px;
     font-style: italic;
     font: italic 28px/43px 'Georgia', serif;
     color: #fff;
@@ -71,7 +70,7 @@ body
 
 .quote-container__quote-author
 {
-    margin-left: 60px;
+    margin: 10px 0 0 66px;
     font: 550 16px 'Open Sans', sans-serif;
     color: #fff;
 }
@@ -80,7 +79,7 @@ body
 {
     clear: both;
     width: 330px;
-    padding-top: 50px;
+    padding-top: 45px;
     display: inline-block;
     float: left;
 }
@@ -93,7 +92,7 @@ body
 
 .favorite-list__list
 {
-    margin: 15px 0 40px 23px;
+    margin: 12px 0 43px 19px;
     padding: 0;
     color: #555;
     font: 19px/36px 'Georgia', serif;
@@ -102,11 +101,11 @@ body
 .content-text
 {
     float: left;
-    width: 600px;
-    padding: 40px 20px 0 60px;
+    width: 630px;
+    padding: 32px 0px 0 60px;
     box-sizing: border-box;
     position: relative;
-    bottom: 160px;
+    top: -160px;
 }
 
 .content-text__title
@@ -119,11 +118,13 @@ body
 .content-text__title_h1
 {
     font: bold 48px 'Open Sans', sans-serif;
+    margin-left: 5px;
 }
 
 .content-text__title_h2
 {
-    font: 36px 'Open Sans', sans-serif;
+    font: 400 36px 'Open Sans', sans-serif;
+    padding-top: 30px;
 }
 
 .content-text__line
@@ -138,7 +139,7 @@ body
 {
     color: #555;
     font: 19px/32px 'Georgia', serif;
-    margin: 20px 0 40px;
+    margin: 15px 0 40px;
 }
 
 .content-text__contact-me
@@ -147,6 +148,8 @@ body
     color: #15a98c;
     font-family: 'Georgia', serif;
     font-size: 19px;
+    display: block;
+    padding-top: 6px;
 }
 
 .content-text__contact-me:after
@@ -161,13 +164,14 @@ body
     flex-direction: column;
     background: #f9f9f9;
     position: relative;
-    top: -65px;
+    top: -100px;
 }
 
 .favorite-films-title
 {
     width: 1215px;
-    margin: 35px auto 30px;
+    margin: 32px auto 30px;
+    padding-right: 25px;
     color: #333;
     font: 36px 'Open Sans', sans-serif;
 }
@@ -176,6 +180,7 @@ body
 {
     display: flex;
     margin: auto;
+    padding-right: 20px;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -190,14 +195,14 @@ body
 {
     color: #333;
     font: bold 22px 'Open Sans', sans-serif;
-    margin: 25px 0 15px;
+    margin: 20px 0 18px;
 }
 
 .favorite-films__description
 {
     color: #333;
     font: 200 16px 'Georgia', serif;
-    line-height: 35px;
+    line-height: 28px;
 }
 
 .button
@@ -214,13 +219,21 @@ body
 .more-button
 {
     display: block;
-    margin: 60px auto 70px;
+    margin: 54px auto 70px;
 }
 
 .contact-me-form
 {
     width: 700px;
     margin: 0 auto;
+    position: relative;
+    top: -68px;
+    padding-right: 50px;
+}
+
+.contact-me-form__items-container
+{
+    padding: 40px 75px 0 85px;
 }
 
 .contact-me-form__title
@@ -252,17 +265,12 @@ body
     margin-left: 25px;
 }
 
-.contact-me-form__items-container
-{
-    padding: 0 85px;
-}
-
 .contact-me-form__item
 {
     box-sizing: border-box;
     width: 100%;
-    margin: 5px 0;
-    padding-left: 20px; 
+    margin-top: 5px;
+    padding-left: 16px; 
     height: 50px;
     border: 2px solid #a6a6a6;
     border-radius: 4px;
@@ -280,8 +288,8 @@ body
 .contact-me-form__item-title
 {
     color: #333;
-    margin-top: 25px; 
-    font: 400 16pt 'Open Sans', sans-serif;
+    margin-top: 27px; 
+    font: 400 20px 'Open Sans', sans-serif;
 }
 
 .contact-me-form__item-title_required:after
@@ -291,34 +299,71 @@ body
 }
 .contact-me-form__item_selector
 {
-    background-image: url('../images/arrow_down.png');
+    background-image: url('../img/arrow_down.png');
     background-repeat: no-repeat;
     background-position: right 15px top 50%, 0 0;
     appearance: none;
     font: 18px 'Open Sans', sans-serif;
+    margin-bottom: 17px;
 }
 
 .contact-me-form__radio-item-container
 {
     display: inline-block;
-    margin: 10px 50px 0 0;
+    margin: 15px 33px 13px 0;
 }
 
 .contact-me-form__radio-item
 {
-    margin: 0 5px 0 0;
+    display: none;
+}
+
+.contact-me-form__radio-item-label
+{
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 23px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+    margin-top: 0;
+}
+
+.contact-me-form__radio-item-label:before
+{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 21px;
+    position: absolute;
+    left: -2px;
+    background: url('../img/radio.png') 0 0 no-repeat;
+}
+
+.contact-me-form__radio-item:checked + .contact-me-form__radio-item-label:before
+{
+    background: url('../img/radio_checked.png') 0 0 no-repeat;
+}
+
+.contact-me-form__message
+{
+    min-width: 320px;
 }
 
 .submit-button
 {
-    margin: 50px 0;
+    margin: 45px 0;
 }
 .copyright-footer
 {
     height: 70px;
+    margin-top: -66px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 60px;
     background: #f5f5f5;
     color: #333;
     font: 400 16px 'Georgia', serif; 
