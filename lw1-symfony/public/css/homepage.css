@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+body
+{
+	margin: 0;
+}
+
+.main-title
+{
+	background: #333;
+	padding-top: 2.5%;
+	display: flex;
+	align-items: center;
+	padding-left: 10%;
+	font: 300 38px 'Open Sans', sans-serif;
+	color: #fff;
+}
+
+.main-content
+{
+	margin: 5% 10%;
+	font: 400 20px/30px 'Open Sans', sans-serif;
+}
+
+.profile-photo
+{
+	border-radius: 10px;
+	width: 50%;
+	float: right;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+.content-text
+{
+	width: 50%;
+}
+
+.content-text__title
+{
+	text-shadow: -4px 5px 7px rgb(49 183 214 / 50%);
+}
+.content-text__text
+{
+	border-bottom: 1px;
+	border-width: 1px;
+	border-color: #7979f5;
+}
+
+.profile-link
+{
+	margin-top: 5%;
+	clear: both;
+	font: 600 24px 'Open Sans', sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.link
+{
+	color: #219836;
+	text-decoration: none;
+}
+
+.link:visited
+{
+	color: #219836;
+}
