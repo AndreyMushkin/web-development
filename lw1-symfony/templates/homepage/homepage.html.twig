@@ -15,7 +15,7 @@
       <div class="content-text">
         <h2 class="content-text__title">О себе</h2>
         <ul class="content-text__text">
-          <li>Привет, посетитель этой странички! Меня зовут <strong>Андрей Мушкин</strong>, мне 19 лет, я студент первого курса ПГТУ - ФИиВТ - ПС.</li>
+          <li>Привет, посетитель этой странички! Меня зовут <strong>{{ name }}</strong>, мне {{ age }} лет, я студент первого курса ПГТУ - ФИиВТ - ПС.</li>
           <li>Закончил школу в <strong>Йошкар-Оле</strong>: 9 класс в СОШ №1 и 11 клаcc в Политехническом лицее.</li>
           <li>Был наслышан о <i>"фивте"</i> с ранних лет. Меня всегла увлекала профессия программиста, поэтому решил поступать именно сюда.</li>
         </ul>
@@ -28,6 +28,7 @@
     </article>
     <footer class="profile-link">
       <a class="link" href="https://vk.com/lich906">vk.com</a>
+      <a class="link" href="mailto:{{ email }}">{{ email }}</a>
     </footer>
   </body>
 </html>
