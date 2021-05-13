@@ -20,7 +20,7 @@ body
     margin: 0;
     display: flex;
     align-items: center;
-    padding: 0 21px;
+    padding: 0 20px;
     background: #fff;
     font: 19px 'Georgia', sans-serif;
 }
@@ -33,6 +33,7 @@ body
 {
     color: #fff;
     background: #15a98c;
+    padding-right: 23px;
 }
 
 .content
@@ -41,16 +42,31 @@ body
     margin: 160px auto 0;
     padding: 0 20px;
 }
-.profile-photo
+.content__left-content-sidebar
 {
     float: left;
+    width: 330px;
+    display: inline-block;
+}
+
+.content__right-content-sidebar
+{
+    display: inline-block;
+    position: relative;
+    width: 650px;
+    clear: both;
+}
+
+.profile-photo
+{
     margin-top: 50px;
 }
 
 .quote-container
 {
     width: 650px;
-    float: left;
+    height: auto;
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -62,7 +78,7 @@ body
 
 .quote-container__quote-text
 {
-    margin: 74px 62px 0px;
+    margin: 74px 64px 0px;
     font-style: italic;
     font: italic 28px/43px 'Georgia', serif;
     color: #fff;
@@ -77,11 +93,8 @@ body
 
 .favorite-list
 {
-    clear: both;
     width: 330px;
-    padding-top: 45px;
-    display: inline-block;
-    float: left;
+    padding-top: 40px;
 }
 
 .favorite-list__list-title
@@ -92,25 +105,27 @@ body
 
 .favorite-list__list
 {
-    margin: 12px 0 43px 19px;
+    margin: 12px 0 40px 21px;
     padding: 0;
     color: #555;
     font: 19px/36px 'Georgia', serif;
 }
 
+.favorite-list__item_moved
+{
+    margin-left: -3px; 
+}
+
 .content-text
 {
-    float: left;
-    width: 630px;
-    padding: 32px 0px 0 60px;
+    width: 650px;
+    padding: 80px 0 0 60px;
     box-sizing: border-box;
-    position: relative;
-    top: -160px;
 }
 
 .content-text__title
 {
-    color: #333333;
+    color: #333;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
@@ -118,28 +133,29 @@ body
 .content-text__title_h1
 {
     font: bold 48px 'Open Sans', sans-serif;
-    margin-left: 5px;
+    margin-left: 4px;
 }
 
 .content-text__title_h2
 {
     font: 400 36px 'Open Sans', sans-serif;
     padding-top: 30px;
+    margin-left: -2px;
 }
 
 .content-text__line
 {
     background-color: #15a98c;
     width: 60px;
-    height: 5px;
+    height: 6px;
     border-radius: 2.5px;
-    margin: 20px 0 45px;
+    margin: 21px 0 44px;
 }
 .content-text__text
 {
     color: #555;
     font: 19px/32px 'Georgia', serif;
-    margin: 15px 0 40px;
+    margin: 12px 0 40px;
 }
 
 .content-text__contact-me
@@ -159,12 +175,10 @@ body
 
 .favorite-films
 {
-    clear: both;
+    margin-top: 62px;
     display: flex;
     flex-direction: column;
     background: #f9f9f9;
-    position: relative;
-    top: -100px;
 }
 
 .favorite-films-title
@@ -195,7 +209,12 @@ body
 {
     color: #333;
     font: bold 22px 'Open Sans', sans-serif;
-    margin: 20px 0 18px;
+    margin: 20px 0 18px -2px;
+}
+
+.favorite-films__name_moved
+{
+    margin-left: 0px;
 }
 
 .favorite-films__description
@@ -219,15 +238,13 @@ body
 .more-button
 {
     display: block;
-    margin: 54px auto 70px;
+    margin: 54px 635px 60px;
 }
 
 .contact-me-form
 {
     width: 700px;
-    margin: 0 auto;
-    position: relative;
-    top: -68px;
+    margin: 42px auto 0;
     padding-right: 50px;
 }
 
@@ -310,7 +327,7 @@ body
 .contact-me-form__radio-item-container
 {
     display: inline-block;
-    margin: 15px 33px 13px 0;
+    margin: 15px 33px 16px 0;
 }
 
 .contact-me-form__radio-item
@@ -350,16 +367,17 @@ body
 .contact-me-form__message
 {
     min-width: 320px;
+    min-height: 152px;
 }
 
 .submit-button
 {
     margin: 45px 0;
 }
+
 .copyright-footer
 {
     height: 70px;
-    margin-top: -66px;
     display: flex;
     align-items: center;
     justify-content: center;

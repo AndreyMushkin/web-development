@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Profile Page</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="top-menu">
@@ -18,44 +20,48 @@
       </div>
     </header>
     <div class="content">
-      <img class="profile-photo" src="img/profile_photo.png" alt="profile photo" />
-      <div class="quote-container">
+      <div class="content__left-content-sidebar">
+        <img class="profile-photo" src="img/profile_photo.png" alt="profile photo" />
+        <div class="favorite-list">
+          <div class="favorite-list__list-title">Любимые писатели:</div>
+          <ul class="favorite-list__list">
+            <li class="favorite-list__item">Айзек Азимов</li>
+            <li class="favorite-list__item">Говард Лавкрафт</li>
+            <li class="favorite-list__item">Дмитрий Глуховский</li>
+            <li class="favorite-list__item">Чак Паланик</li>
+          </ul>
+          <div class="favorite-list__list-title">Любимые фильмы:</div>
+          <ol class="favorite-list__list">
+            <li class="favorite-list__item favorite-list__item_moved">Шоу Трумэна</li>
+            <li class="favorite-list__item">Малхолланд Драйв</li>
+            <li class="favorite-list__item">Семь жизней</li>
+            <li class="favorite-list__item">Гравитация</li>
+          </ol>
+        </div>
+      </div>
+      <div class="content__right-content-sidebar">
         <img class="quote-container__quote-icon" src="img/quotes-alpha.png" alt="quotes" />
-        <p class="quote-container__quote-text">
-          Мы берем на себя много, потому что мало чего боимся
-        </p>
-        <p class="quote-container__quote-author">
-          ― Том Демарко. Deadline
-        </p>
+        <div class="quote-container">
+          <p class="quote-container__quote-text">
+            Мы берем на себя много, потому что мало чего боимся
+          </p>
+          <p class="quote-container__quote-author">
+            ― Том Демарко. Deadline
+          </p>
+        </div>
+        <article class="content-text">
+          <h1 class="content-text__title content-text__title_h1">Jane Doe</h1>
+          <div class="content-text__line"></div>
+          <p class="content-text__text">
+            В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал публиковать мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер Томпкинс, как явствовало из этих историй, интересовался современной наукой.
+          </p>
+          <h2 class="content-text__title content-text__title_h2">Мое хобби</h2>
+          <p class="content-text__text">
+            Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на самом интересном месте. А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, где один из основных законов физики действовал не так, как в его мире.
+          </p>
+          <a class="content-text__contact-me" href=""><u>Напиши мне</u></a>
+        </article>
       </div>
-      <div class="favorite-list">
-        <div class="favorite-list__list-title">Любимые писатели:</div>
-        <ul class="favorite-list__list">
-          <li class="favorite-list__item">Айзек Азимов</li>
-          <li class="favorite-list__item">Говард Лавкрафт</li>
-          <li class="favorite-list__item">Дмитрий Глуховский</li>
-          <li class="favorite-list__item">Чак Паланик</li>
-        </ul>
-        <div class="favorite-list__list-title">Любимые фильмы:</div>
-        <ol class="favorite-list__list">
-          <li class="favorite-list__item">Шоу Трумэна</li>
-          <li class="favorite-list__item">Малхолланд Драйв</li>
-          <li class="favorite-list__item">Семь жизней</li>
-          <li class="favorite-list__item">Гравитация</li>
-        </ol>
-      </div>
-      <article class="content-text">
-        <h1 class="content-text__title content-text__title_h1">Jane Doe</h1>
-        <div class="content-text__line"></div>
-        <p class="content-text__text">
-          В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал публиковать мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер Томпкинс, как явствовало из этих историй, интересовался современной наукой.
-        </p>
-        <h2 class="content-text__title content-text__title_h2">Мое хобби</h2>
-        <p class="content-text__text">
-          Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на самом интересном месте. А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, где один из основных законов физики действовал не так, как в его мире.
-        </p>
-        <a class="content-text__contact-me" href=""><u>Напиши мне</u></a>
-      </article>
     </div>
     <div class="favorite-films">
       <div class="favorite-films-title">Любимые фильмы</div>
@@ -76,7 +82,7 @@
         </div>
         <div class="favorite-films__item">
           <img class="favorite-films__img" src="img/astral.png" alt="Астрал">
-          <div class="favorite-films__name">Астрал</div>
+          <div class="favorite-films__name favorite-films__name_moved">Астрал</div>
           <div class="favorite-films__description">
             Джош и Рене переезжают со своими детьми в новый дом, но не успевают толком распаковать вещи, как начинаются странные события. Необъяснимо перемещаются предметы, в детской звучат странные звуки… Но в настоящий ужас приходят родители, когда их десятилетний сын Далтон впадает в кому. Все усилия врачей в больнице помочь мальчику безуспешны.
           </div>
@@ -121,6 +127,8 @@
         <button class="button submit-button">Отправить</button>
       </div>
     </form>
-    <footer class="copyright-footer">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</footer>
+    <footer class="copyright-footer">
+      © 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
+    </footer>
   </body>
 </html>
