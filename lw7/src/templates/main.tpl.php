@@ -114,7 +114,7 @@
           <div class="contact-me-form__item-title contact-me-form__item-title_required">Ваше имя</div>
           <input type="text" class="contact-me-form__item" name="name" maxlength="255" required="required" />
           <div class="contact-me-form__item-title contact-me-form__item-title_required">Ваш email</div>
-          <input type="email" class="contact-me-form__item" name="email" maxlength="255" required="required" />
+          <input type="text" class="contact-me-form__item" name="email" maxlength="255" required="required" />
           <div class="contact-me-form__item-title">Откуда вы?</div>
           <select class="contact-me-form__item contact-me-form__item_selector" name="country">
             <option class="contact-me-form__country-item" value="Russia">Россия</option>
@@ -143,7 +143,7 @@
                 <li class="list__item_error"><?php echo $args['name_err_msg']; ?></li>
             <?php } ?>
             <?php if (isset($args['empty_err_msg'])) { ?>
-                <li class="list__item_error"><?php echo $args['empty_err_msg']; ?></li>
+                <li class="list__item_error contact-me-form__item-title_required"><?php echo $args['empty_err_msg']; ?></li>
             <?php } ?>
             <?php if (isset($args['success'])) { ?>
                 <li class="list__item_success"><?php echo $args['success']; ?></li>
