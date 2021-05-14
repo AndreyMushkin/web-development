@@ -33,7 +33,7 @@ body
 
 .top-menu__item
 {
-    min-width: 130px;
+    min-width: 80px;
     margin-right: 10px;
     display: flex;
     align-items: center;
@@ -42,7 +42,12 @@ body
     font: 19px 'Georgia', sans-serif;
 }
 
-.top-menu__item-icon
+/*.top-menu__item-icon
+{
+    display: none;
+}*/
+
+.top-menu__item-text
 {
     display: none;
 }
@@ -226,14 +231,19 @@ body
     display: flex;
     margin: 0 20px;
     width: auto;
-    flex-wrap: nowrap;
-    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .favorite-films__item
 {
-    max-width: 265px;
-    margin-right: 30px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.favorite-films__img
+{
+    width: 100%;
 }
 
 .favorite-films__name
@@ -253,6 +263,7 @@ body
     color: #333;
     font: 200 19px 'Georgia', serif;
     line-height: 28px;
+    margin-bottom: 20px; 
 }
 
 .button
@@ -399,6 +410,29 @@ body
     font: 400 16px 'Georgia', serif; 
 }
 
+@media screen and (min-width: 500px)
+{
+    .top-menu__item
+    {
+        min-width: 130px;
+    }
+
+    .top-menu__item-icon
+    {
+        margin-right: 10px;
+    }
+
+    .top-menu__item-text
+    {
+        display: initial;
+    }
+
+    .favorite-films__item
+    {
+        width: 45%;
+        margin: 0 10px 0 0;
+    }
+}
 @media screen and (min-width: 768px)
 {
     .shell
@@ -515,6 +549,11 @@ body
         margin: 0 auto;
     }
 
+    .favorite-films__item
+    {
+        margin-right: 30px;
+    }
+
     .contact-me-form__title:before, .contact-me-form__title:after
     {
         content: '';
@@ -583,6 +622,11 @@ body
     .favorite-films__container
     {
         max-width: 1200px;
+    }
+
+    .favorite-films__item
+    {
+        max-width: 265px;
     }
 
     .contact-me-form
