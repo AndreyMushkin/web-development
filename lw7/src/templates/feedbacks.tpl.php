@@ -16,15 +16,14 @@
       <button type="submit" class="button submit-button">Отправить</button>
       <ul class="list">
         <?php
-            if ($args['status'] === 'ok')
+            if ($status === 'ok')
             {
-                unset($args['status']);
                 foreach ($args as $key => $value) 
                 {
                     ?> <li><?php echo $key; ?>: <?php echo $value; ?></li><?php
                 }
             }
-            elseif ($args['status'] === 'error')
+            elseif ($status === 'error')
             {
                 ?><li class="list__item_error">
                     Запись для почты <?php echo $args['Email']; ?> не найдена

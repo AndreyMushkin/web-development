@@ -1,29 +1,5 @@
 <?php
 
-// чет не пашет
-// function ptrTranslate(string $ptr): string
-// {
-//     $translate = [
-//         'male' => 'Мужской',
-//         'female' => 'Женский',
-//         'Russia' => 'Россия',
-//         'China' => 'Китай',
-//         'Germany' => 'Германия',
-//         'USA' => 'США',
-//         'Brazil' => 'Бразилия',
-//     ];
-
-//     if (isset($translate[$ptr]))
-//     {
-//         return $translate[$ptr];
-//     }
-//     else
-//     {
-//         return $ptr;
-//     }
-    
-// }
-
 function feedbacksListPage(): void
 {
 
@@ -47,12 +23,10 @@ function feedbacksListPage(): void
 
                 case 'country':
                     $country = strtok('=');
-                    // $country = ptrTranslate($country);
                     break;
 
                 case 'gender':
                     $gender = strtok('=');
-                    // $gender = ptrTranslate($gender);
                     break;
 
                 case 'message':
@@ -68,14 +42,12 @@ function feedbacksListPage(): void
             'Страна' => $country,
             'Пол' => $gender,
             'Сообщение' => $message,
-            'status' => 'ok',
-        ]);
+        ], 'ok');
     }
     else
     {
         renderTemplate('feedbacks.tpl.php', [
             'Email' => $email,
-            'status' => 'error',
-        ]);
+        ], 'error');
     }
 }

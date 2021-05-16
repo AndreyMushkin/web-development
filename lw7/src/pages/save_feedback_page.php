@@ -2,20 +2,20 @@
 
 require_once(__DIR__ . '\..\utils\request.php');
 
-define(EMAIL_ERR_MSG, 'Некорректный адрес электронной почты');
-define(NAME_ERR_MSG, 'Имя должно содержать только буквы русского или латинского алфавита');
-define(EMPTY_ERR_MSG, 'Пожалуйста, заполните обязательные поля.');
-define(SUCCESS_MSG, 'Ваше сообщение отправлено.');
+define('EMAIL_ERR_MSG', 'Некорректный адрес электронной почты');
+define('NAME_ERR_MSG', 'Имя должно содержать только буквы русского или латинского алфавита');
+define('EMPTY_ERR_MSG', 'Пожалуйста, заполните обязательные поля.');
+define('SUCCESS_MSG', 'Ваше сообщение отправлено.');
 
 function saveFeedbackPage(): void
 {
     $invalidName = false;
     $invalidEmail = true;
+    $status = 'error';
+    $emailErrMsg = $nameErrMsg = $emptyErrMsg = null;
 
     $name = getPOSTParameter('name');
     $email = getPOSTParameter('email');
-    $country = getPOSTParameter('country');
-    $gender = getPOSTParameter('gender');
     $message = getPOSTParameter('gender');
 
     if (!empty($name) && !empty($email) && !empty($message))
@@ -28,7 +28,7 @@ function saveFeedbackPage(): void
             }
         }
 
-        if (stripos($email[$i], '@'))
+        if (stripos($email, '@'))
         {
             strtok($email, '@');
             $emailDomen = strtok('@');
@@ -53,7 +53,7 @@ function saveFeedbackPage(): void
 
         if (!($invalidEmail || $invalidName))
         {
-            $success = SUCCESS_MSG;
+            $status = 'ok';
 
             if(!file_exists('../data'))
             {
@@ -73,9 +73,8 @@ function saveFeedbackPage(): void
     }
 
     renderTemplate('main.tpl.php', [
-        'email_err_msg' => $emailErrMsg,
-        'name_err_msg' => $nameErrMsg,
-        'empty_err_msg' => $emptyErrMsg,
-        'success' => $success,
-    ]);
+        $emailErrMsg,
+        $nameErrMsg,
+        $emptyErrMsg,
+    ], $status);
 }
