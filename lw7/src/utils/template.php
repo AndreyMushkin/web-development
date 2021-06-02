@@ -1,6 +1,6 @@
 <?php
 
-function renderTemplate(string $tplName, array $args = [], string $status): void
+function renderTemplate(string $tplName, array $args = []): void
 {
     include __DIR__ . "/../templates/{$tplName}";
 }

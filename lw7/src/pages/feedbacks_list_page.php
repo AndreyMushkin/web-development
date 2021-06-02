@@ -42,12 +42,10 @@ function feedbacksListPage(): void
             'Страна' => $country,
             'Пол' => $gender,
             'Сообщение' => $message,
-        ], 'ok');
+        ]);
     }
     else
     {
-        renderTemplate('feedbacks.tpl.php', [
-            'Email' => $email,
-        ], 'error');
+        renderTemplate('feedbacks.tpl.php', []);
     }
 }

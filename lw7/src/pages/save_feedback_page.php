@@ -1,30 +1,25 @@
 <?php
 
-require_once(__DIR__ . '\..\utils\request.php');
-
 define('EMAIL_ERR_MSG', 'Некорректный адрес электронной почты');
 define('NAME_ERR_MSG', 'Имя должно содержать только буквы русского или латинского алфавита');
 define('EMPTY_ERR_MSG', 'Пожалуйста, заполните обязательные поля.');
 define('SUCCESS_MSG', 'Ваше сообщение отправлено.');
 
-function saveFeedbackPage(): void
+function validateFormFields(string $name, $email, $message): array
 {
     $invalidName = false;
     $invalidEmail = true;
-    $status = 'error';
     $emailErrMsg = $nameErrMsg = $emptyErrMsg = null;
-
-    $name = getPOSTParameter('name');
-    $email = getPOSTParameter('email');
-    $message = getPOSTParameter('gender');
+    $errorArr = [];
 
     if (!empty($name) && !empty($email) && !empty($message))
     {
-        for ($i = 0; $i < strlen($name); $i++)
+        for ($i = 0; $i < strlen($name) && !$invalidName; $i++)
         {
             if(ctype_digit($name[$i]) or ctype_punct($name[$i]))
             {
                 $invalidName = true;
+                $errorArr[] = NAME_ERR_MSG;
             }
         }
 
@@ -43,38 +38,52 @@ function saveFeedbackPage(): void
 
         if ($invalidEmail)
         {
-            $emailErrMsg = EMAIL_ERR_MSG;
-        }
-
-        if ($invalidName)
-        {
-            $nameErrMsg = NAME_ERR_MSG;
-        }
-
-        if (!($invalidEmail || $invalidName))
-        {
-            $status = 'ok';
-
-            if(!file_exists('../data'))
-            {
-                mkdir('../data');
-            }
-            $emailLow = strtolower($email);
-            $file = fopen("../data/{$emailLow}.txt", 'w');
-            foreach ($_POST as $key => $value) 
-            {
-                fwrite($file, "{$key}={$value}\r\n");
-            }
+            $errorArr[] = EMAIL_ERR_MSG;
         }
     }
     else
     {
-        $emptyErrMsg = EMPTY_ERR_MSG;
+        $errorArr[] = EMPTY_ERR_MSG;
     }
 
-    renderTemplate('main.tpl.php', [
-        $emailErrMsg,
-        $nameErrMsg,
-        $emptyErrMsg,
-    ], $status);
+    return $errorArr;
+}
+
+function saveFeedbackPage(): void
+{
+    $name = getPOSTParameter('name');
+    $email = getPOSTParameter('email');
+    $message = getPOSTParameter('message');
+
+    $dataArr = [
+                'name' => $name, 
+                'email' => $email,
+                'country' => getPOSTParameter('country'),
+                'gender' => getPOSTParameter('gender'),
+                'message' => $message,
+                ];
+
+    $errorArr = validateFormFields($name, $email, $message);
+
+    if (empty($errorArr))
+    {
+        if(!file_exists('../data'))
+        {
+            mkdir('../data');
+        }
+
+        $emailLow = strtolower($email);
+        $file = fopen("../data/{$emailLow}.txt", 'w');
+
+        foreach ($dataArr as $key => $value) 
+        {
+            fwrite($file, "{$key}={$value}\r\n");
+        }
+
+        renderTemplate('main.tpl.php', []);
+    }
+    else
+    {
+        renderTemplate('main.tpl.php', $errorArr);
+    }
 }

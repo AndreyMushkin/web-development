@@ -16,18 +16,21 @@
       <button type="submit" class="button submit-button">Отправить</button>
       <ul class="list">
         <?php
-            if ($status === 'ok')
+            if (getRequestMethod() === 'POST')
             {
-                foreach ($args as $key => $value) 
+                if (!empty($args))
                 {
-                    ?> <li><?php echo $key; ?>: <?php echo $value; ?></li><?php
+                    foreach ($args as $key => $value) 
+                    {
+                        ?> <li><?php echo $key; ?>: <?php echo $value; ?></li><?php
+                    }
                 }
-            }
-            elseif ($status === 'error')
-            {
-                ?><li class="list__item_error">
-                    Запись для почты <?php echo $args['Email']; ?> не найдена
-                  </li><?php
+                else
+                {
+                    ?><li class="list__item_error">
+                        Запись не найдена
+                      </li><?php
+                }
             }
         ?>
       </ul>

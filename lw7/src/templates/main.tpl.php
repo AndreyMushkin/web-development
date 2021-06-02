@@ -136,21 +136,24 @@
           <textarea class="contact-me-form__item contact-me-form__message" name="message" cols="30" rows="10" required="required" maxlength="65536"></textarea>
           <button type="submit" class="button submit-button">Отправить</button>
           <ul class="favorite-list__list">
-            <?php 
-            if ($status === 'error')
-            {
-                foreach ($args as $arg)
-                {
-                    if ($arg)
+            <?php
+                if (getRequestMethod() === 'POST')
+                { 
+                    if (!empty($args))
                     {
-                      ?><li class="list__item_error"><?php echo $arg; ?></li><?php
+                        foreach ($args as $arg)
+                        {
+                            if ($arg)
+                            {
+                              ?><li class="list__item_error"><?php echo $arg; ?></li><?php
+                            }
+                        }
+                    }
+                    else
+                    {
+                      ?><li class="list__item_success"><?php echo SUCCESS_MSG; ?></li><?php
                     }
                 }
-            }
-            elseif ($status === 'ok')
-            {
-              ?><li class="list__item_success"><?php echo SUCCESS_MSG; ?></li><?php
-            }
             ?>
           </ul>          
         </div>
