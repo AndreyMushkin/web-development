@@ -1,5 +1,0 @@
-name=drhdtyh
-email=srhunsirp@srih.rsut
-country=China
-gender=female
-message=srhsrhsrthsrth
