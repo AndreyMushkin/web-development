@@ -9,7 +9,6 @@ function validateFormFields(string $name, $email, $message): array
 {
     $invalidName = false;
     $invalidEmail = true;
-    $emailErrMsg = $nameErrMsg = $emptyErrMsg = null;
     $errorArr = [];
 
     if (!empty($name) && !empty($email) && !empty($message))
